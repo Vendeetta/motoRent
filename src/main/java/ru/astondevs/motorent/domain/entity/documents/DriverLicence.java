@@ -6,8 +6,8 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import ru.drogunov.rent.exceptions.ArrayIsEmptyOrNull;
-import ru.drogunov.rent.model.convertors.CategoryParser;
-import ru.drogunov.rent.model.entity.Category;
+import ru.astondevs.motorent.domain.convertors.CategoryParser;
+import ru.astondevs.motorent.domain.entity.Category;
 
 import java.util.ArrayList;
 import java.util.Arrays;

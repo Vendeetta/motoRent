@@ -3,8 +3,8 @@ package ru.astondevs.motorent.domain.entity.persons;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
-import ru.drogunov.rent.model.entity.address.Address;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.address.Address;
 
 @Getter
 @Setter

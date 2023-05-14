@@ -3,9 +3,9 @@ package ru.astondevs.motorent.domain.entity.persons;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.documents.DriverLicence;
-import ru.drogunov.rent.model.entity.documents.PassportRF;
-import ru.drogunov.rent.model.entity.events.RentMoto;
+import ru.astondevs.motorent.domain.entity.documents.DriverLicence;
+import ru.astondevs.motorent.domain.entity.documents.PassportRF;
+import ru.astondevs.motorent.domain.entity.events.RentMoto;
 
 import java.util.ArrayList;
 import java.util.List;

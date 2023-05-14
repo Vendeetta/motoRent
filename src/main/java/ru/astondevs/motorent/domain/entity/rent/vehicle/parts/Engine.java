@@ -6,8 +6,8 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
-import ru.drogunov.rent.model.entity.rent.vehicle.TypeEngine;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.TypeEngine;
 
 @Getter
 @Setter

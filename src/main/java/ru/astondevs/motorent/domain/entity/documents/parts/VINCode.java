@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
 
 @Getter
 @Setter

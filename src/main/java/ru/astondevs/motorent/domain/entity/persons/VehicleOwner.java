@@ -3,8 +3,8 @@ package ru.astondevs.motorent.domain.entity.persons;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.documents.DocumentOfOwnership;
-import ru.drogunov.rent.model.entity.documents.VehiclePassport;
+import ru.astondevs.motorent.domain.entity.documents.DocumentOfOwnership;
+import ru.astondevs.motorent.domain.entity.documents.VehiclePassport;
 
 import java.time.LocalDate;
 import java.util.List;

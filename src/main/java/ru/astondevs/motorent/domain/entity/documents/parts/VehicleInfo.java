@@ -3,10 +3,10 @@ package ru.astondevs.motorent.domain.entity.documents.parts;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.Category;
-import ru.drogunov.rent.model.entity.rent.vehicle.parts.Color;
-import ru.drogunov.rent.model.entity.rent.vehicle.parts.Engine;
-import ru.drogunov.rent.model.entity.rent.vehicle.parts.Mark;
+import ru.astondevs.motorent.domain.entity.Category;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.Color;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.Engine;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.Mark;
 
 import java.time.Year;
 

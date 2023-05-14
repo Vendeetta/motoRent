@@ -3,9 +3,9 @@ package ru.astondevs.motorent.domain.entity.events;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
-import ru.drogunov.rent.model.entity.persons.RentCustomer;
-import ru.drogunov.rent.model.entity.rent.vehicle.Vehicle;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.persons.RentCustomer;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.Vehicle;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

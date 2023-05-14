@@ -3,7 +3,7 @@ package ru.astondevs.motorent.domain.entity.events;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
 
 import java.time.LocalDateTime;
 

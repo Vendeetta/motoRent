@@ -3,11 +3,11 @@ package ru.astondevs.motorent.domain.entity.rent.vehicle;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import ru.drogunov.rent.model.entity.BaseEntity;
-import ru.drogunov.rent.model.entity.documents.CertificateDImmatriculation;
-import ru.drogunov.rent.model.entity.documents.VehiclePassport;
-import ru.drogunov.rent.model.entity.rent.vehicle.parts.CodeModel;
-import ru.drogunov.rent.model.entity.rent.vehicle.parts.Mileage;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.documents.CertificateDImmatriculation;
+import ru.astondevs.motorent.domain.entity.documents.VehiclePassport;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.CodeModel;
+import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.Mileage;
 
 import java.util.List;
 
