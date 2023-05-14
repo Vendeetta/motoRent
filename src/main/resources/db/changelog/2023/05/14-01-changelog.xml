@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.22.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1684080640681-1" author="sergey (generated)">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_address"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="zip_code_id" type="INT"/>
+            <column name="country_id" type="BIGINT"/>
+            <column name="city_id" type="BIGINT"/>
+            <column name="street_id" type="BIGINT"/>
+            <column name="number_home" type="VARCHAR(255)"/>
+            <column name="corpus" type="VARCHAR(255)"/>
+            <column name="apartment" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-2" author="sergey (generated)">
+        <createTable tableName="certificate_d_immatriculation">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_certificate_d_immatriculation"/>
+            </column>
+            <column name="type_document" type="INT"/>
+            <column name="sub_type_document" type="VARCHAR(255)"/>
+            <column name="serial" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="issued_by" type="VARCHAR(255)"/>
+            <column name="date_of_issue" type="DATE"/>
+            <column name="valid_for" type="DATE"/>
+            <column name="owner_id" type="BIGINT"/>
+            <column name="special_marks" type="VARCHAR(255)"/>
+            <column name="state_number_id" type="BIGINT"/>
+            <column name="vehicle_info" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-3" author="sergey (generated)">
+        <createTable tableName="city">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_city"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-4" author="sergey (generated)">
+        <createTable tableName="code_model">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_code_model"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="code_model" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-5" author="sergey (generated)">
+        <createTable tableName="color">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_color"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="hex" type="VARCHAR(255)"/>
+            <column name="rgb" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-6" author="sergey (generated)">
+        <createTable tableName="country">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_country"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-7" author="sergey (generated)">
+        <createTable tableName="document_of_ownership">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_document_of_ownership"/>
+            </column>
+            <column name="type_document" type="INT"/>
+            <column name="sub_type_document" type="VARCHAR(255)"/>
+            <column name="serial" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="issued_by" type="VARCHAR(255)"/>
+            <column name="date_of_issue" type="DATE"/>
+            <column name="valid_for" type="DATE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-8" author="sergey (generated)">
+        <createTable tableName="driver_licence">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_driver_licence"/>
+            </column>
+            <column name="type_document" type="INT"/>
+            <column name="sub_type_document" type="VARCHAR(255)"/>
+            <column name="serial" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="issued_by" type="VARCHAR(255)"/>
+            <column name="date_of_issue" type="DATE"/>
+            <column name="valid_for" type="DATE"/>
+            <column name="categories" type="VARCHAR"/>
+            <column name="validation_on_gibdd" type="BIT"/>
+            <column name="special_marks" type="VARCHAR(255)"/>
+            <column name="rent_customer_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-9" author="sergey (generated)">
+        <createTable tableName="engine">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_engine"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="model" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="power_hors" type="INT"/>
+            <column name="power_kvt" type="INT"/>
+            <column name="working_volume" type="INT"/>
+            <column name="type_engine" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-10" author="sergey (generated)">
+        <createTable tableName="lease_renewal">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_lease_renewal"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="rent_moto_id" type="BIGINT"/>
+            <column name="with_date" type="DATETIME"/>
+            <column name="by_date" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-11" author="sergey (generated)">
+        <createTable tableName="mark">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_mark"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="mark" type="VARCHAR(255)"/>
+            <column name="model" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-12" author="sergey (generated)">
+        <createTable tableName="mileage">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_mileage"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="mile_age" type="INT"/>
+            <column name="fix_time" type="DATETIME"/>
+            <column name="store_mileage_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-13" author="sergey (generated)">
+        <createTable tableName="owners_vehicle_passport">
+            <column name="owner_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vehicle_passport_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-14" author="sergey (generated)">
+        <createTable tableName="passport_rf">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_passport_rf"/>
+            </column>
+            <column name="type_document" type="INT"/>
+            <column name="sub_type_document" type="VARCHAR(255)"/>
+            <column name="serial" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="issued_by" type="VARCHAR(255)"/>
+            <column name="date_of_issue" type="DATE"/>
+            <column name="valid_for" type="DATE"/>
+            <column name="rent_customer_id" type="BIGINT"/>
+            <column name="division_code" type="VARCHAR(255)"/>
+            <column name="birth_place" type="VARCHAR(255)"/>
+            <column name="birth_day" type="DATE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-15" author="sergey (generated)">
+        <createTable tableName="person">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_person"/>
+            </column>
+            <column name="dtype" type="VARCHAR(31)"/>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="patronymic" type="VARCHAR(255)"/>
+            <column name="adress_id" type="BIGINT"/>
+            <column name="sale_date" type="DATE"/>
+            <column name="date_removal_from_the_register" type="DATE"/>
+            <column name="document_of_ownership_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-16" author="sergey (generated)">
+        <createTable tableName="rent_moto">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_rent_moto"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="vehicle_id" type="BIGINT"/>
+            <column name="rent_customer_id" type="BIGINT"/>
+            <column name="start_rent" type="DATETIME"/>
+            <column name="finish_rent" type="DATETIME"/>
+            <column name="return_date" type="DATETIME"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-17" author="sergey (generated)">
+        <createTable tableName="state_number">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_state_number"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="numbers" type="VARCHAR(255)"/>
+            <column name="letters" type="VARCHAR(255)"/>
+            <column name="region" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-18" author="sergey (generated)">
+        <createTable tableName="street">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_street"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-19" author="sergey (generated)">
+        <createTable tableName="vehicle">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vehicle"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="vehicle_passport_id" type="BIGINT"/>
+            <column name="certificate_d_immatriculation_id" type="BIGINT"/>
+            <column name="code_model_id" type="BIGINT"/>
+            <column name="mileage_when_buyer" type="BIGINT"/>
+            <column name="price_buy" type="INT"/>
+            <column name="additional_cost" type="INT"/>
+            <column name="estimated_market_price" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-20" author="sergey (generated)">
+        <createTable tableName="vehicle_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vehicle_info"/>
+            </column>
+            <column name="vin_code_id" type="BIGINT"/>
+            <column name="mark_id" type="BIGINT"/>
+            <column name="color_id" type="BIGINT"/>
+            <column name="engine_id" type="BIGINT"/>
+            <column name="year" type="SMALLINT"/>
+            <column name="category" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="chassis" type="VARCHAR(255)"/>
+            <column name="body" type="VARCHAR(255)"/>
+            <column name="special_marks" type="VARCHAR(255)"/>
+            <column name="max_mass" type="INT"/>
+            <column name="netto_mass" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-21" author="sergey (generated)">
+        <createTable tableName="vehicle_passport">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vehicle_passport"/>
+            </column>
+            <column name="type_document" type="INT"/>
+            <column name="sub_type_document" type="VARCHAR(255)"/>
+            <column name="serial" type="VARCHAR(255)"/>
+            <column name="number" type="VARCHAR(255)"/>
+            <column name="issued_by" type="VARCHAR(255)"/>
+            <column name="date_of_issue" type="DATE"/>
+            <column name="valid_for" type="DATE"/>
+            <column name="vehicle_info_id" type="BIGINT"/>
+            <column name="manufacturer" type="VARCHAR(255)"/>
+            <column name="country_export_id" type="BIGINT"/>
+            <column name="customs_restrictions" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-22" author="sergey (generated)">
+        <createTable tableName="vehicle_passport_crts">
+            <column name="crts_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="vehicle_passport_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-23" author="sergey (generated)">
+        <createTable tableName="vin_code">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_vin_code"/>
+            </column>
+            <column name="update_date" type="DATETIME"/>
+            <column name="create_date" type="DATETIME"/>
+            <column name="vin_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-24" author="sergey (generated)">
+        <createTable tableName="zip_code">
+            <column name="zip_code" type="INT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_zip_code"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="1684080640681-25" author="sergey (generated)">
+        <addUniqueConstraint columnNames="crts_id" constraintName="uc_vehicle_passport_crts_crts"
+                             tableName="vehicle_passport_crts"/>
+    </changeSet>
+    <changeSet id="1684080640681-26" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="city_id" baseTableName="address" constraintName="FK_ADDRESS_ON_CITY"
+                                 referencedColumnNames="id" referencedTableName="city"/>
+    </changeSet>
+    <changeSet id="1684080640681-27" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="country_id" baseTableName="address"
+                                 constraintName="FK_ADDRESS_ON_COUNTRY" referencedColumnNames="id"
+                                 referencedTableName="country"/>
+    </changeSet>
+    <changeSet id="1684080640681-28" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="street_id" baseTableName="address"
+                                 constraintName="FK_ADDRESS_ON_STREET" referencedColumnNames="id"
+                                 referencedTableName="street"/>
+    </changeSet>
+    <changeSet id="1684080640681-29" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="zip_code_id" baseTableName="address"
+                                 constraintName="FK_ADDRESS_ON_ZIP_CODE" referencedColumnNames="zip_code"
+                                 referencedTableName="zip_code"/>
+    </changeSet>
+    <changeSet id="1684080640681-30" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="owner_id" baseTableName="certificate_d_immatriculation"
+                                 constraintName="FK_CERTIFICATE_D_IMMATRICULATION_ON_OWNER" referencedColumnNames="id"
+                                 referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-31" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="state_number_id" baseTableName="certificate_d_immatriculation"
+                                 constraintName="FK_CERTIFICATE_D_IMMATRICULATION_ON_STATE_NUMBER"
+                                 referencedColumnNames="id" referencedTableName="state_number"/>
+    </changeSet>
+    <changeSet id="1684080640681-32" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_info" baseTableName="certificate_d_immatriculation"
+                                 constraintName="FK_CERTIFICATE_D_IMMATRICULATION_ON_VEHICLE_INFO"
+                                 referencedColumnNames="id" referencedTableName="vehicle_info"/>
+    </changeSet>
+    <changeSet id="1684080640681-33" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="rent_customer_id" baseTableName="driver_licence"
+                                 constraintName="FK_DRIVER_LICENCE_ON_RENT_CUSTOMER" referencedColumnNames="id"
+                                 referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-34" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="rent_moto_id" baseTableName="lease_renewal"
+                                 constraintName="FK_LEASE_RENEWAL_ON_RENT_MOTO" referencedColumnNames="id"
+                                 referencedTableName="rent_moto"/>
+    </changeSet>
+    <changeSet id="1684080640681-35" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="store_mileage_id" baseTableName="mileage"
+                                 constraintName="FK_MILEAGE_ON_STORE_MILEAGE" referencedColumnNames="id"
+                                 referencedTableName="vehicle"/>
+    </changeSet>
+    <changeSet id="1684080640681-36" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="rent_customer_id" baseTableName="passport_rf"
+                                 constraintName="FK_PASSPORT_RF_ON_RENT_CUSTOMER" referencedColumnNames="id"
+                                 referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-37" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="adress_id" baseTableName="person" constraintName="FK_PERSON_ON_ADRESS"
+                                 referencedColumnNames="id" referencedTableName="address"/>
+    </changeSet>
+    <changeSet id="1684080640681-38" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="document_of_ownership_id" baseTableName="person"
+                                 constraintName="FK_PERSON_ON_DOCUMENT_OF_OWNERSHIP" referencedColumnNames="id"
+                                 referencedTableName="document_of_ownership"/>
+    </changeSet>
+    <changeSet id="1684080640681-39" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="rent_moto" constraintName="FK_RENT_MOTO_ON_ID"
+                                 referencedColumnNames="id" referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-40" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="rent_customer_id" baseTableName="rent_moto"
+                                 constraintName="FK_RENT_MOTO_ON_RENT_CUSTOMER" referencedColumnNames="id"
+                                 referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-41" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_id" baseTableName="rent_moto"
+                                 constraintName="FK_RENT_MOTO_ON_VEHICLE" referencedColumnNames="id"
+                                 referencedTableName="vehicle"/>
+    </changeSet>
+    <changeSet id="1684080640681-42" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="color_id" baseTableName="vehicle_info"
+                                 constraintName="FK_VEHICLE_INFO_ON_COLOR" referencedColumnNames="id"
+                                 referencedTableName="color"/>
+    </changeSet>
+    <changeSet id="1684080640681-43" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="engine_id" baseTableName="vehicle_info"
+                                 constraintName="FK_VEHICLE_INFO_ON_ENGINE" referencedColumnNames="id"
+                                 referencedTableName="engine"/>
+    </changeSet>
+    <changeSet id="1684080640681-44" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="mark_id" baseTableName="vehicle_info"
+                                 constraintName="FK_VEHICLE_INFO_ON_MARK" referencedColumnNames="id"
+                                 referencedTableName="mark"/>
+    </changeSet>
+    <changeSet id="1684080640681-45" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vin_code_id" baseTableName="vehicle_info"
+                                 constraintName="FK_VEHICLE_INFO_ON_VIN_CODE" referencedColumnNames="id"
+                                 referencedTableName="vin_code"/>
+    </changeSet>
+    <changeSet id="1684080640681-46" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="certificate_d_immatriculation_id" baseTableName="vehicle"
+                                 constraintName="FK_VEHICLE_ON_CERTIFICATE_D_IMMATRICULATION" referencedColumnNames="id"
+                                 referencedTableName="certificate_d_immatriculation"/>
+    </changeSet>
+    <changeSet id="1684080640681-47" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="code_model_id" baseTableName="vehicle"
+                                 constraintName="FK_VEHICLE_ON_CODE_MODEL" referencedColumnNames="id"
+                                 referencedTableName="code_model"/>
+    </changeSet>
+    <changeSet id="1684080640681-48" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="mileage_when_buyer" baseTableName="vehicle"
+                                 constraintName="FK_VEHICLE_ON_MILEAGE_WHEN_BUYER" referencedColumnNames="id"
+                                 referencedTableName="mileage"/>
+    </changeSet>
+    <changeSet id="1684080640681-49" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_passport_id" baseTableName="vehicle"
+                                 constraintName="FK_VEHICLE_ON_VEHICLE_PASSPORT" referencedColumnNames="id"
+                                 referencedTableName="vehicle_passport"/>
+    </changeSet>
+    <changeSet id="1684080640681-50" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="country_export_id" baseTableName="vehicle_passport"
+                                 constraintName="FK_VEHICLE_PASSPORT_ON_COUNTRY_EXPORT" referencedColumnNames="id"
+                                 referencedTableName="country"/>
+    </changeSet>
+    <changeSet id="1684080640681-51" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_info_id" baseTableName="vehicle_passport"
+                                 constraintName="FK_VEHICLE_PASSPORT_ON_VEHICLE_INFO" referencedColumnNames="id"
+                                 referencedTableName="vehicle_info"/>
+    </changeSet>
+    <changeSet id="1684080640681-52" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="owner_id" baseTableName="owners_vehicle_passport"
+                                 constraintName="fk_ownvehpas_on_vehicle_owner" referencedColumnNames="id"
+                                 referencedTableName="person"/>
+    </changeSet>
+    <changeSet id="1684080640681-53" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_passport_id" baseTableName="owners_vehicle_passport"
+                                 constraintName="fk_ownvehpas_on_vehicle_passport" referencedColumnNames="id"
+                                 referencedTableName="vehicle_passport"/>
+    </changeSet>
+    <changeSet id="1684080640681-54" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="crts_id" baseTableName="vehicle_passport_crts"
+                                 constraintName="fk_vehpascrt_on_certificate_d_immatriculation"
+                                 referencedColumnNames="id" referencedTableName="certificate_d_immatriculation"/>
+    </changeSet>
+    <changeSet id="1684080640681-55" author="sergey (generated)">
+        <addForeignKeyConstraint baseColumnNames="vehicle_passport_id" baseTableName="vehicle_passport_crts"
+                                 constraintName="fk_vehpascrt_on_vehicle_passport" referencedColumnNames="id"
+                                 referencedTableName="vehicle_passport"/>
+    </changeSet>
+
+</databaseChangeLog>

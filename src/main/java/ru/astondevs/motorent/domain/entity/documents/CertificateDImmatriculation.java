@@ -4,26 +4,19 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import ru.astondevs.motorent.domain.entity.documents.parts.VehicleInfo;
-import ru.astondevs.motorent.domain.entity.persons.VehicleOwner;
-import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.StateNumber;
 
 @Getter
 @Setter
 @Entity(name = "certificate_d_immatriculation")
 public class CertificateDImmatriculation extends BaseDocument {
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "owner_id")
-    private VehicleOwner owner;
-    //TODO Пределать в класс есть так же в ПТС\ВУ\СРТС
+    private Long ownerId;
     @Column(name = "special_marks")
     private String specialMarks;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "state_number_id")
-    private StateNumber stateNumber;
-    @ManyToOne(cascade = CascadeType.ALL)
+    private String stateNumber;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "vehicle_info")
-    private VehicleInfo vehicleInfo;
-    @ManyToOne(cascade = CascadeType.ALL)
+    private VehicleInfo vehicleInfoId;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(name = "vehicle_passport_crts",
             joinColumns = @JoinColumn(name = "crts_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "vehicle_passport_id", referencedColumnName = "id")

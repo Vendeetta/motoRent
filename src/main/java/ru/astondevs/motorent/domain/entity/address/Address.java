@@ -9,21 +9,10 @@ import ru.astondevs.motorent.domain.entity.BaseEntity;
 @Setter
 @Entity(name = "address")
 public class Address extends BaseEntity {
-    //TODO Область район
-
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "zip_code_id")
-    private ZipCode zipCode;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "country_id")
-    private Country country;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "city_id")
-    private City city;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "street_id")
-    private Street street;
+    private String zipCode;
+    private String country;
+    private String city;
+    private String street;
     @Column(name = "number_home")
     private String numberHome;
     private String corpus;
