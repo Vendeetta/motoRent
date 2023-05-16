@@ -4,6 +4,10 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.22.xsd">
-    <include file="db/changelog/2023/05/14-02-changelog.xml"/>
+
+    <include file="db/changelog/2023/05/16-01-changelog.xml"/>
+    <changeSet id="1684196920015-1" author="sergey">
+        <sqlFile path="db/test-data.sql"/>
+    </changeSet>
 
 </databaseChangeLog>

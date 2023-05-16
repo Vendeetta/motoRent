@@ -1,10 +1,13 @@
 package ru.astondevs.motorent.domain.entity.documents;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import ru.astondevs.motorent.domain.entity.documents.parts.VehicleInfo;
-import java.util.List;
 
 @Getter
 @Setter

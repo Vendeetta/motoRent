@@ -1,7 +1,11 @@
 package ru.astondevs.motorent.domain.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -11,10 +15,11 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity {
+@NoArgsConstructor
+public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
     @UpdateTimestamp
     private LocalDateTime updateDate;
     @CreationTimestamp

@@ -1,6 +1,10 @@
 package ru.astondevs.motorent.domain.entity.rent.vehicle;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 import ru.astondevs.motorent.domain.entity.BaseEntity;
@@ -20,9 +24,7 @@ public class Vehicle extends BaseEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "certificate_d_immatriculation_id")
     private CertificateDImmatriculation certificateDImmatriculation;
-    @OneToMany(cascade = CascadeType.ALL)
-    //TODO Не правильная связь
-    @JoinColumn(name = "store_mileage_id")
-    private List<Mileage> storeMileage;
+    @OneToMany(mappedBy = "mileage", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Mileage> mileages;
 
 }

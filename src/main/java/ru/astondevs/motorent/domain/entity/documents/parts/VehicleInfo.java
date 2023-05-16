@@ -1,10 +1,15 @@
 package ru.astondevs.motorent.domain.entity.documents.parts;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import ru.astondevs.motorent.domain.entity.Category;
-import ru.astondevs.motorent.domain.entity.rent.vehicle.parts.Engine;
 
 import java.time.Year;
 
@@ -18,9 +23,16 @@ public class VehicleInfo {
     private String VINCode;
     private String mark;
     private String color;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "engine_id")
-    private Engine engine;
+    private String model;
+    private String number;
+    @Column(name = "power_hors")
+    private Integer powerHors;
+    @Column(name = "power_kvt")
+    private Integer powerKVT;
+    @Column(name = "working_volume")
+    private Integer workingVolume;
+    @Column(name = "type_engine")
+    private String typeEngine;
     @Column(name = "year")
     private Year year;
     @Enumerated(EnumType.STRING)
@@ -35,5 +47,4 @@ public class VehicleInfo {
     private Integer maxMass;
     @Column(name = "netto_mass")
     private Integer nettoMass;
-
 }
