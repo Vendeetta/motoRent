@@ -1,6 +1,6 @@
 package ru.astondevs.motorent.domain.entity.events;
 
-public enum Status {
+public enum StatusRent {
     CREATE,
     CANCEL,
     RESERVE,

@@ -6,11 +6,14 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.astondevs.motorent.domain.entity.BaseDocument;
 import ru.astondevs.motorent.domain.entity.documents.parts.VehicleInfo;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity(name = "vehicle_passport")
 public class VehiclePassport extends BaseDocument {
     @ManyToOne(fetch = FetchType.LAZY)

@@ -4,22 +4,20 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.astondevs.motorent.domain.entity.Category;
+import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.CategoryDriversLicence;
 
 import java.time.Year;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity(name = "vehicle_info")
-public class VehicleInfo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class VehicleInfo extends BaseEntity {
+    @Column(name = "vin_code")
     private String VINCode;
     private String mark;
     private String color;
@@ -36,7 +34,7 @@ public class VehicleInfo {
     @Column(name = "year")
     private Year year;
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private CategoryDriversLicence category;
     @Column(name = "type")
     private String type;
     private String chassis;

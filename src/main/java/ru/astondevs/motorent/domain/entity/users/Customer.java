@@ -7,6 +7,7 @@ import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.astondevs.motorent.domain.entity.BaseUser;
 import ru.astondevs.motorent.domain.entity.documents.DriverLicence;
 import ru.astondevs.motorent.domain.entity.documents.PassportRF;
 import ru.astondevs.motorent.domain.entity.events.Rent;

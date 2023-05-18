@@ -1,16 +1,20 @@
-package ru.astondevs.motorent.domain.entity.users;
+package ru.astondevs.motorent.domain.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import ru.astondevs.motorent.domain.entity.BaseEntity;
+import ru.astondevs.motorent.domain.entity.users.Role;
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-@Table(name = "users")
+@Entity(name = "users")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class BaseUser extends BaseEntity {
     @Column(name = "last_name", nullable = false)

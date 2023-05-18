@@ -14,8 +14,8 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@MappedSuperclass
 @NoArgsConstructor
+@MappedSuperclass
 public abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

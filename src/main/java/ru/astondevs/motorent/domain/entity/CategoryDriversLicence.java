@@ -1,6 +1,6 @@
 package ru.astondevs.motorent.domain.entity;
 
-public enum Category {
+public enum CategoryDriversLicence {
     A,
     B,
     C,

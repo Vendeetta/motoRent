@@ -25,7 +25,7 @@ values (1, '2023-05-16 01:50:07.000000', '2023-05-16 01:50:12.000000', 'Росс
        (3, '2023-05-16 01:50:07.000000', '2023-05-16 01:50:12.000000', 'Россия', '343333', 'Московская область',
         'Москва', 'Главная', '66', 'null', 'null');
 
-insert into public.vehicle_info (id, vincode, mark, color, model, number, power_hors, power_kvt, working_volume,
+insert into public.vehicle_info (id, vin_code, mark, color, model, number, power_hors, power_kvt, working_volume,
                                  type_engine, year, category, type, chassis, body, special_marks, max_mass, netto_mass)
 values (1, 'SDFDF231231242', 'HONDA', 'ЧЕРНЫЙ', 'VFR800', '3232ВА23', 123, 43, 800, 'БЕНЗИНОВЫЙ', 2003, 'A', 'МОТОЦИКЛ',
         'SDFDF231231242', 'ОТСУТСВУЕТ', null, 234, 200),
@@ -45,8 +45,6 @@ values (2, 6, 'Свидетельство о регистрации ТС', '4134
 
 insert into certificate_d_immatriculation (id, vehicle_info)
 values (2, 1);
-
-
 
 insert into public.documents (id, type_document, sub_type_document, serial, number, issued_by, date_of_issue, valid_for)
 values (3, 10, 'Паспорт транспортного средства', '3441', '432332', 'Тульская таможня', '2018-03-16', null);

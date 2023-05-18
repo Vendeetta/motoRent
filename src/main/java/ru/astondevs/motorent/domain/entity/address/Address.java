@@ -3,11 +3,13 @@ package ru.astondevs.motorent.domain.entity.address;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import ru.astondevs.motorent.domain.entity.BaseEntity;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity(name = "address")
 public class Address extends BaseEntity {
     @Column(name = "country", nullable = false)
