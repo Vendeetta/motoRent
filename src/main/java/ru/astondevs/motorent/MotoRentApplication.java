@@ -9,4 +9,5 @@ public class MotoRentApplication {
     public static void main(String[] args) {
         SpringApplication.run(MotoRentApplication.class, args);
     }
+
 }
