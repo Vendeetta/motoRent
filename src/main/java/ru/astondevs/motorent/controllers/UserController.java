@@ -1,5 +1,6 @@
 package ru.astondevs.motorent.controllers;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ public class UserController {
         this.service = service;
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
     @GetMapping("/healthCheck")
     public String hello() {
         return "Hello, World";

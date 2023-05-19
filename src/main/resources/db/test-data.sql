@@ -1,13 +1,13 @@
 insert into public.users (id, update_date, create_date, last_name, first_name, patronymic, username, password, email,
                           role)
-values (1, '2020-06-18 02:22:48.000000', '2017-07-18 02:22:55.000000', 'Петров', 'Пётр', 'Петрович', 'Petr', 'petr',
+values (1, '2020-06-18 02:22:48.000000', '2017-07-18 02:22:55.000000', 'Петров', 'Пётр', 'Петрович', 'Petr', '$2y$10$zshJBlFOldBw0bBksod1hu9LlIx52Ghe0uquTVVjkwMftfsN5EZoe',
         'petr@mail.ru', 'NON_AUTH'),
-       (2, '2017-08-23 02:22:48.000000', '2019-06-12 02:22:55.000000', 'Иванов', 'Иван', 'Иванович', 'Ivan', 'ivan',
+       (2, '2017-08-23 02:22:48.000000', '2019-06-12 02:22:55.000000', 'Иванов', 'Иван', 'Иванович', 'Ivan', '$2y$10$lH1eb6HsHLAfQxPCz7MtKe7riUr6KVRre30lTa9AhM7wj5zfZcn6i',
         'ivan@mail.ru', 'USER'),
        (3, '2022-06-18 02:22:48.000000', '2015-07-18 02:22:55.000000', 'Волкова', 'Елена', 'Константиновна', 'volkova',
-        'volkova', 'volkova@mail.ru', 'MANAGER'),
+        '$2y$10$Vwr2c46MRZMJ56SZVRPm4eVcL9lzn398S5KNb4u7/HsjWend9u3mG', 'volkova@mail.ru', 'MANAGER'),
        (4, '2020-06-18 02:22:48.000000', '2017-07-18 02:22:55.000000', 'Админов', 'Админ', 'Админович', 'Admin',
-        'admin', 'admin@mail.ru', 'ADMINISTRATOR');
+        '$2y$10$O1ZF8raxfpjYdZcXV/zMg.R3F1hWVl7b6r1HzHKoRlAw66box.t3C', 'admin@mail.ru', 'ADMINISTRATOR');
 
 insert into public.manager (id, position)
 values (3, 'God');

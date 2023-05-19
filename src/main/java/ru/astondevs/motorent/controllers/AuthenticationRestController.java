@@ -1,5 +1,6 @@
 package ru.astondevs.motorent.controllers;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -37,6 +38,7 @@ public class AuthenticationRestController {
         this.repository = repository;
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
     @PostMapping("/login")
     public ResponseEntity<Map<Object, Object>> login(@RequestBody AuthUserRequest authUserRequest) {
         try {
