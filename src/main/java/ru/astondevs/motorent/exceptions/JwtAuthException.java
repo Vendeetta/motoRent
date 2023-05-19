@@ -1,4 +1,4 @@
-package ru.astondevs.exceptions;
+package ru.astondevs.motorent.exceptions;
 
 import org.springframework.security.core.AuthenticationException;
 

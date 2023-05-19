@@ -10,7 +10,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
-import ru.astondevs.exceptions.JwtAuthException;
+import ru.astondevs.motorent.exceptions.JwtAuthException;
 import ru.astondevs.motorent.domain.entity.users.Role;
 
 import java.util.Base64;
