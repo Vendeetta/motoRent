@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    BaseUser register (BaseUser user);
+    BaseUser register(BaseUser user);
 
     List<BaseUser> getAllUsers();
 
@@ -14,5 +14,7 @@ public interface UserService {
 
     BaseUser findById(Long id);
 
-    void delete (Long id);
+    void delete(Long id);
+
+    String getRole(String token);
 }

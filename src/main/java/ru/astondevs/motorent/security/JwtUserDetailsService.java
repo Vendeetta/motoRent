@@ -8,7 +8,6 @@ import ru.astondevs.motorent.domain.entity.users.BaseUser;
 import ru.astondevs.motorent.repository.UserRepository;
 import ru.astondevs.motorent.security.jwt.JwtUser;
 import ru.astondevs.motorent.security.jwt.JwtUserFactory;
-import ru.astondevs.motorent.service.UserService;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {

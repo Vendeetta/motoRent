@@ -3,7 +3,6 @@ package ru.astondevs.motorent.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,7 +10,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import ru.astondevs.motorent.security.jwt.JwtConfigurer;
 import ru.astondevs.motorent.security.jwt.JwtTokenFilter;
 import ru.astondevs.motorent.security.jwt.JwtTokenProvider;
 
@@ -35,51 +33,21 @@ public class SecurityConf {
 
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-//        AbstractAuthenticationProcessingFilter filter = new CustomizedAuthenticationFilter(authenticationManager());
-//        filter.setFilterProcessesUrl("/api/login");
-//        http.csrf().disable();
-//        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-//        http.authorizeHttpRequests();
-//        http.authorizeHttpRequests().requestMatchers(HttpMethod.POST, "/api/login").permitAll();
-//        http.authorizeHttpRequests().requestMatchers("/api/admin/**").hasAnyRole(ADMINISTRATOR.name());
-//        http.authorizeHttpRequests().anyRequest().authenticated();
-//        http.apply(new JwtConfigurer(jwtTokenProvider));
-////        http.addFilter(filter);
-//
-//        return http.build();
-//    }
+
         http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers(
-                        "/api/login", "/api/register"
-                )
+                .requestMatchers("/api/v1/login", "/api/v1/register")
                 .permitAll()
-                .requestMatchers("/api/admin/**")
+                .requestMatchers("/api/v1/admin/**")
                 .hasAuthority(ADMINISTRATOR.name())
-
-
-                /* .requestMatchers("/api/v1/admin/**").hasRole(ADMIN.name())
-
-                 .requestMatchers(GET, "/api/v1/admin/**").hasAuthority(ADMIN_READ.name())
-                 .requestMatchers(POST, "/api/v1/admin/**").hasAuthority(ADMIN_CREATE.name())
-                 .requestMatchers(PUT, "/api/v1/admin/**").hasAuthority(ADMIN_UPDATE.name())
-                 .requestMatchers(DELETE, "/api/v1/admin/**").hasAuthority(ADMIN_DELETE.name())*/
-
-
                 .anyRequest()
                 .authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-//                .authenticationProvider(jwtTokenProvider)
-                .addFilterBefore(new JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class)
-//                .logout()
-//                .logoutUrl("/api/v1/auth/logout")
-//                .addLogoutHandler(logoutHandler)
-//                .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext())
-        ;
+                .addFilterBefore(new JwtTokenFilter(jwtTokenProvider), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

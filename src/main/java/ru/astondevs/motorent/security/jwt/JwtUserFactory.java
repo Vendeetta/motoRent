@@ -18,7 +18,7 @@ public final class JwtUserFactory {
                 mapRoleToGrantedAuthority(user.getRole()));
     }
 
-    private static GrantedAuthority mapRoleToGrantedAuthority(Role userRole){
+    private static GrantedAuthority mapRoleToGrantedAuthority(Role userRole) {
         return new SimpleGrantedAuthority(userRole.name());
     }
 }

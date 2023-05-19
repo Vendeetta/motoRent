@@ -1,11 +1,13 @@
 package ru.astondevs.motorent.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.astondevs.motorent.domain.entity.users.BaseUser;
 import ru.astondevs.motorent.domain.entity.users.Role;
 import ru.astondevs.motorent.repository.UserRepository;
+import ru.astondevs.motorent.security.jwt.JwtTokenProvider;
 import ru.astondevs.motorent.service.UserService;
 
 import java.util.List;
@@ -14,11 +16,14 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    private final JwtTokenProvider provider;
+
+    public UserServiceImpl(UserRepository userRepository, JwtTokenProvider provider) {
         this.userRepository = userRepository;
         this.passwordEncoder = new BCryptPasswordEncoder();
+        this.provider = provider;
     }
 
     public BaseUser register(BaseUser user) {
@@ -49,5 +54,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public String getRole(String token) {
+        Jws<Claims> claimsJws = provider.decodingToken(token);
+        return claimsJws.getBody().get("role").toString();
     }
 }

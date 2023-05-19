@@ -10,7 +10,7 @@ import ru.astondevs.motorent.service.UserService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/admin")
+@RequestMapping("/api/v1/admin")
 public class AdminRestController {
 
     private final UserService userService;
@@ -19,10 +19,9 @@ public class AdminRestController {
         this.userService = userService;
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<String> getAll(){
-//        List<BaseUser> allUsers = userService.getAllUsers();
-//        return ResponseEntity.ok(allUsers);
-        return ResponseEntity.ok("HI, ADMIN");
+    @GetMapping("/getAllUsers")
+    public ResponseEntity<List<BaseUser>> getAll(){
+        List<BaseUser> allUsers = userService.getAllUsers();
+        return ResponseEntity.ok(allUsers);
     }
 }
