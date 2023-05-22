@@ -26,6 +26,7 @@ public class UserController {
         return "Hello, World";
     }
 
+    @SecurityRequirement(name = "Bearer Authentication")
     @GetMapping("/role")
     public ResponseEntity<String> getRole(@RequestHeader(name = "Authorization") String token) {
         return ResponseEntity.ok(service.getRole(token));
